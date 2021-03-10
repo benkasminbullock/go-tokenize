@@ -5,6 +5,7 @@ use utf8;
 use FindBin '$Bin';
 use Go::Tokenize 'tokenize';
 use File::Slurper qw!read_text!;
+
 for (@ARGV) {
     my $text = read_text ($_);
     my $tokens = tokenize ($text);
