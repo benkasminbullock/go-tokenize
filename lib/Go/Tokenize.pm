@@ -20,10 +20,12 @@ our $string_re = qr!(?:$bt_string_re|$q_string_re)!;
 
 # https://golang.org/ref/spec#Keywords
 
+# PAUSE thinks this is package switch without the newline
 our @keywords = qw!
 break        default      func         interface    select
 case         defer        go           map          struct
-chan         else         goto         package      switch
+chan         else         goto         package
+switch
 const        fallthrough  if           range        type
 continue     for          import       return       var
 !;
