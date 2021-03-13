@@ -41,7 +41,7 @@ Turn Go code into tokens.
 
 Given your Go program text in C<$go>, turn it into tokens. The return
 value is an array reference which contains hash references. The hash
-references have the following keys
+references have the following keys:
 
 =over
 
@@ -52,8 +52,9 @@ The text content of the token.
 =item end
 
 The position of the final character of the token, in characters. See
-L</start> for the numbering. This is the value of L<pos> as the regex
-used for matching matches components.
+L</start> for the numbering. This is the value of
+L<pos|https://perldoc.perl.org/functions/pos> as the regex used for
+matching matches components.
 
 =item line
 
@@ -75,13 +76,11 @@ The type of the token. Currently the following are supported:
 
 =over
 
-=item comment
+[% FOR type IN types %]
 
-=item keyword
+=item [% type -%]
 
-=item operator
-
-=item string
+[%- END %]
 
 =back
 

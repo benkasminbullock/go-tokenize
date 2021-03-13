@@ -27,11 +27,15 @@ my $pod = 'Tokenize.pod';
 my $input = "$Bin/lib/Go/$pod.tmpl";
 my $output = "$Bin/lib/Go/$pod";
 
+use lib "$Bin/lib";
+use Go::Tokenize;
+
 # Template toolkit variable holder
 
 my %vars = (
     info => $info,
     commit => $commit,
+    types => \@Go::Tokenize::types,
 );
 
 my $tt = Template->new (

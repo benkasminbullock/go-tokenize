@@ -124,7 +124,7 @@ our $go_re = qr!
     (?<whitespace>$whitespace_re)
 !x;
 
-my @types = (qw!
+our @types = (qw!
     comment
     identifier
     integer
