@@ -10,6 +10,11 @@ produces output
 
 (This example is included as L<F<[% pl %]>|https://fastapi.metacpan.org/source/BKB/Go-Tokenize-[% info.version %]/examples/[% pl %]> in the distribution.)
 [% END %]
+[% MACRO noout(file) BLOCK %]
+[%- pl =  file _ ".pl" -%]
+[% INCLUDE $pl | xtidy %]
+(This example is included as L<F<[% pl %]>|https://fastapi.metacpan.org/source/BKB/Go-Tokenize-[% info.version %]/examples/[% pl %]> in the distribution.)
+[% END %]
 [% MACRO since(version) BLOCK -%]
 This method was added in version [% version %] of the module.
 [%- END %]
@@ -85,6 +90,15 @@ The type of the token. Currently the following are supported:
 =back
 
 =back
+
+=head1 EXAMPLES
+
+=head2 Edit only comments
+
+This is an example of editing only the comments in a lot of .go files
+to remove an accidentally applied prefix C<doofus.>.
+
+[% noout("edit-comments") %]
 
 =head1 DEPENDENCIES
 
